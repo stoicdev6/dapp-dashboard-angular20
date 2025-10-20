@@ -1,7 +1,11 @@
-<div class="flex h-screen bg-gray-100">
-  <app-sidebar class="hidden lg:block"></app-sidebar>
-  <div class="flex-1 flex flex-col overflow-hidden">
-    <app-header></app-header>
-    <app-main-content></app-main-content>
+@if (isLandingPage()) {
+  <router-outlet></router-outlet>
+} @else {
+  <div class="flex h-screen bg-gray-100">
+    <app-sidebar class="hidden lg:block"></app-sidebar>
+    <div class="flex-1 flex flex-col overflow-hidden">
+      <app-header></app-header>
+      <app-main-content></app-main-content>
+    </div>
   </div>
-</div>
+}
