@@ -2,18 +2,19 @@
 export default {
   bootstrap: () => import('./main.server.mjs').then(m => m.default),
   inlineCriticalCss: true,
-  baseHref: 'D:/Program Files/Git/dapp-dashboard-angular20/',
+  baseHref: '/',
   locale: undefined,
   routes: [
   {
     "renderMode": 2,
-    "route": "/Program%20Files/Git/dapp-dashboard-angular20"
+    "route": "/"
   }
 ],
   entryPointToBrowserMapping: undefined,
   assets: {
-    'index.csr.html': {size: 2183, hash: 'ae2071064ecc165722a873e0525a2a9e38ff5615a70cc1fd33494c1bba6031d1', text: () => import('./assets-chunks/index_csr_html.mjs').then(m => m.default)},
-    'index.server.html': {size: 996, hash: 'dfdc441bd794289b7f6dd4c1999fc505e365b67faadcb9ad4402ece34d1377c1', text: () => import('./assets-chunks/index_server_html.mjs').then(m => m.default)},
+    'index.csr.html': {size: 2138, hash: '590445dba09a30989de51f58fe35d1275bbedea28da952e9092f7bb4c755195b', text: () => import('./assets-chunks/index_csr_html.mjs').then(m => m.default)},
+    'index.server.html': {size: 951, hash: '303d832676040121bc926d367b76447eb8c01ef5d71dc21bbecd9d16844c0a9b', text: () => import('./assets-chunks/index_server_html.mjs').then(m => m.default)},
+    'index.html': {size: 23717, hash: '69daea1b313968b77d462176bb25892e61b973cdc9170297878ddf5453b4090e', text: () => import('./assets-chunks/index_html.mjs').then(m => m.default)},
     'styles-QSQSKKTB.css': {size: 5467, hash: 'pxrXc4VIgpQ', text: () => import('./assets-chunks/styles-QSQSKKTB_css.mjs').then(m => m.default)}
   },
 };
