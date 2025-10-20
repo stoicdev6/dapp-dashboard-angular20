@@ -1,5 +1,6 @@
 
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { LayoutService } from '../../../core/services/layout.service';
 
 @Component({
   selector: 'app-header',
@@ -7,4 +8,10 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HeaderComponent {}
+export class HeaderComponent {
+  private layoutService = inject(LayoutService);
+
+  toggleSidebar() {
+    this.layoutService.toggleSidebar();
+  }
+}
