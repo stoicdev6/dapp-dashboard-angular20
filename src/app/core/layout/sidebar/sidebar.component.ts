@@ -1,6 +1,6 @@
 
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { LayoutService } from '../../../core/services/layout.service';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
@@ -25,10 +25,16 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 })
 export class SidebarComponent {
   private layoutService = inject(LayoutService);
+  private router = inject(Router);
   isSidebarOpen = this.layoutService.isSidebarOpen;
 
   closeSidebar() {
     this.layoutService.closeSidebar();
+  }
+
+  logout() {
+    this.closeSidebar();
+    this.router.navigate(['/']);
   }
 
   get slideState() {
