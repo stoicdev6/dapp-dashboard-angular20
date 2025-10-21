@@ -8,8 +8,21 @@
       </button>
       <h1 class="text-xl font-bold">dApp Dashboard</h1>
     </div>
-    <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shadow-lg transition duration-300">
-      Connect Wallet
-    </button>
+    @if (walletService.isConnected) {
+      <button (click)="disconnectWallet()" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg shadow-lg transition duration-300">
+        Disconnect
+      </button>
+    } @else {
+      <div class="relative">
+        <button (click)="connectWallet()" [disabled]="!walletService.isMetaMaskInstalled$()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shadow-lg transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed">
+          Connect Wallet
+        </button>
+        @if (!walletService.isMetaMaskInstalled$()) {
+          <div class="absolute top-full mt-2 w-48 bg-gray-700 text-white text-sm rounded-lg p-2 shadow-lg">
+            MetaMask is not installed.
+          </div>
+        }
+      </div>
+    }
   </div>
 </header>

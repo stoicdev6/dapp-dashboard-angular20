@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
+import { WalletService } from '../../core/services/wallet.service';
 
 @Component({
   selector: 'app-landing',
@@ -9,9 +10,11 @@ import { Router } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LandingComponent {
-  constructor(private router: Router) {}
+  private router = inject(Router);
+  private walletService = inject(WalletService);
 
-  navigateToDashboard() {
+  async navigateToDashboard() {
+    await this.walletService.connectWallet();
     this.router.navigate(['/dashboard']);
   }
 }

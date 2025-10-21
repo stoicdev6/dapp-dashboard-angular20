@@ -3,6 +3,7 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { LayoutService } from '../../../core/services/layout.service';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { WalletService } from '../../../core/services/wallet.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -26,6 +27,8 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 export class SidebarComponent {
   private layoutService = inject(LayoutService);
   private router = inject(Router);
+  walletService = inject(WalletService);
+
   isSidebarOpen = this.layoutService.isSidebarOpen;
 
   closeSidebar() {
