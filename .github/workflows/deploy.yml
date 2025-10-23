@@ -30,4 +30,4 @@ jobs:
         run: npm run build -- --base-href=/dapp-dashboard-angular20/
 
       - name: Deploy to GitHub Pages
-        run: ls -a dist/; npx angular-cli-ghpages --dir=dist/ --no-silent
+        run: ls -a dist/dapp-dashboard; npx angular-cli-ghpages --dir=dist/dapp-dashboard --no-silent
