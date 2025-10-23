@@ -1,5 +1,8 @@
 {
   "routes": {
-    "/": {}
+    "/dapp-dashboard-angular20": {},
+    "/dapp-dashboard-angular20/assets": {},
+    "/dapp-dashboard-angular20/dashboard": {},
+    "/dapp-dashboard-angular20/transactions": {}
   }
 }

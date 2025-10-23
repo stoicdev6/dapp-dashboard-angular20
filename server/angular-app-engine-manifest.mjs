@@ -1,6 +1,6 @@
 
 export default {
-  basePath: '/',
+  basePath: '/dapp-dashboard-angular20',
   supportedLocales: {
   "en-US": ""
 },
